@@ -1,0 +1,15 @@
+.cartWidget-container {
+    position: relative;
+    display: inline-block;
+}
+
+.cartWidget-number {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: red;
+    color: white;
+    border-radius: 100%;
+    padding: 2px 4px;
+    font-size: 8px;
+}

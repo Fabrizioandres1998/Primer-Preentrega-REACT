@@ -1,12 +1,12 @@
 .cartWidget-container {
     position: relative;
     display: inline-block;
-    padding-left: 1000px;
+    left: 300px;
 }
 
-@media (max-width: 1110px) {
+@media (max-width: 1504px) {
     .cartWidget-container {
-        padding-left: 0;
+        left: 70px;
     }
 }
 

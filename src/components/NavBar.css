@@ -10,13 +10,28 @@
 .navbar-brand {
     top: 0;
 }
+
+.brand-icon {
+    width: 80px;
+}
+
 .navbar-brand {
     color: white;
+    left: 200px;
+    position: relative; 
+}
+
+@media (max-width: 1504px) {
+    .navbar-brand {
+        left: 0;
+    }
 }
 
 .nav-link {
     color: white;
     margin: 20px;
+    font-size: 20px;
+    margin-left: 100px;
 }
 
 .cartWidget-icon {

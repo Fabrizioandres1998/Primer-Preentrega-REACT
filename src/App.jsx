@@ -8,7 +8,7 @@ import ItemListContainer from './components/ItemListContainer'
 const App = () => {
   return (<>
     <Navbar />
-    <ItemListContainer greeting="¡Hola, bienvenido a Panin Plac!" />
+    <ItemListContainer greeting={"¡Hola, bienvenido a Panin Plac!"}/>
   </>
   )
 

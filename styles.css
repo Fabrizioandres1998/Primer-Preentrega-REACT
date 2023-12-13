@@ -69,3 +69,7 @@
     font-size: 12px;
 }
 
+.asd {
+    display: flex;
+    flex-wrap: wrap;
+}

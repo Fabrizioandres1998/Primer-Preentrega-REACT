@@ -1,6 +1,6 @@
 import React from 'react'
-import Navbar from './components/NavBar'
-import ItemListContainer from './components/ItemListContainer'
+import Navbar from './components/NavBar/NavBar'
+import ItemListContainer from './components/ItemList/ItemListContainer'
 
 
 
@@ -8,7 +8,7 @@ import ItemListContainer from './components/ItemListContainer'
 const App = () => {
   return (<>
     <Navbar />
-    <ItemListContainer greeting={"¡Hola, bienvenido a Panin Plac!"}/>
+    <ItemListContainer/>
   </>
   )
 

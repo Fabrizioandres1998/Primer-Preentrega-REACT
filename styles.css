@@ -76,3 +76,12 @@
 
 .dropdown-menu {
     margin-left: 35%; }
+
+.btn {
+    color: white;
+}   
+
+.btn_contador {
+    margin-bottom: 5px;
+    display: block;
+}

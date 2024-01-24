@@ -1,14 +1,14 @@
-import React from 'react';
-import Item from './Item';
+import React from 'react'
+import Item from './Item'
 
 const ItemList = ({ productos }) => {
-    const categoriasUnicas = [...new Set(productos.map(producto => producto.categoria))];
+    const categoriasUnicas = [...new Set(productos.map(producto => producto.categoria))]
 
     return (
         <div className="container">
             {categoriasUnicas.map(categoria => (
-                <div key={categoria}>
-                    <h2>{categoria}</h2>
+                <div key={`categoria-${categoria}`}>
+                    <h1>{categoria}</h1>
                     <div className="row">
                         {productos
                             .filter(producto => producto.categoria === categoria)
@@ -18,15 +18,16 @@ const ItemList = ({ productos }) => {
                                         nombre={producto.nombre}
                                         descripcion={producto.descripcion}
                                         precio={producto.precio}
-                                        id={producto.id}
+                                        id = {producto.id}
                                     />
                                 </div>
                             ))}
                     </div>
                 </div>
             ))}
-        </div>
-    );
-};
 
-export default ItemList;
+        </div>
+    )
+}
+
+export default ItemList

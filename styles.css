@@ -61,7 +61,7 @@
 .cartWidget-number {
     position: absolute;
     top: 0px;
-    right: px;
+    right: 0px;
     background-color: orange;
     color: white;
     border-radius: 100%;

@@ -1,33 +1,41 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
-import ItemDetail from './ItemDetail'
+import React, { useEffect, useState } from 'react' 
+import { useParams } from 'react-router-dom' 
+import ItemDetail from './ItemDetail' 
+import { doc, getDoc } from 'firebase/firestore' 
+import { dataBase } from '../../firebase/config' 
 
 const ItemDetailContainer = () => {
-    const { id } = useParams()
-    const productos = [
-        { id: 10, nombre: "Bajo mesada", descripcion: "Descripcion de producto A", precio: "$100", categoria: "Cocina" },
-        { id: 20, nombre: "Barra desayunadora", descripcion: "Descripcion de producto B", precio: "$200", categoria: "Cocina" },
-        { id: 30, nombre: "Despensero", descripcion: "Descripcion de producto C", precio: "$300", categoria: "Cocina" },
-        { id: 40, nombre: "Mesa", descripcion: "Descripcion de producto D", precio: "$400", categoria: "Comedor" },
-        { id: 50, nombre: "Silla", descripcion: "Descripcion de producto E", precio: "$500", categoria: "Comedor" },
-        { id: 60, nombre: "Sillon", descripcion: "Descripcion de producto F", precio: "$600", categoria: "Comedor" },
-        { id: 70, nombre: "Cama", descripcion: "Descripcion de producto G", precio: "$700", categoria: "Dormitorio" },
-        { id: 80, nombre: "Ropero", descripcion: "Descripcion de producto H", precio: "$800", categoria: "Dormitorio" },
-        { id: 90, nombre: "Mesa de luz", descripcion: "Descripcion de producto I", precio: "$900", categoria: "Dormitorio" }
-    ]
-    
+    const [item, setItem] = useState(null) 
+    const { id } = useParams()  // Asegúrate de que el nombre del parámetro sea 'id'
 
-    const productoFiltrado = productos.find((producto) => producto.id == id)
+    useEffect(() => {
+
+        const fetchData = async () => {
+            try {
+                const docRef = doc(dataBase, 'productos', id) 
+                const docSnap = await getDoc(docRef) 
+
+                if (docSnap.exists()) {
+                    setItem({
+                        ...docSnap.data(),
+                        id: docSnap.id,
+                    }) 
+                } else {
+                    console.error('No se encontró el documento con el ID proporcionado.') 
+                }
+            } catch (error) {
+                console.error('Error al obtener datos del servidor:', error) 
+            }
+        } 
+
+        fetchData() 
+    }, [id]) 
 
     return (
         <div>
-
-            <ItemDetail
-                producto = {productoFiltrado}
-            />
-
+            {item && <ItemDetail item={item} />}
         </div>
-    )
-}
+    ) 
+} 
 
-export default ItemDetailContainer
+export default ItemDetailContainer 

@@ -1,33 +1,30 @@
-import React from 'react'
 import Navbar from './components/NavBar/NavBar'
 import ItemListContainer from './components/ItemList/ItemListContainer'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import About from './components/About/About'
 import Contact from './components/Contact/Contact'
 import ItemDetailContainer from './components/ItemList/ItemDetailContainer'
-
-
+import { CartProvider } from './components/Cart/CartContext'
+import Carrito from './components/Cart/Carrito'
 
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <CartProvider>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route exact path='/' element={<ItemListContainer />} />
+          <Route exact path='/categoria/:categoria' element={<ItemListContainer />} />
+          <Route exact path='/producto/:id' element={<ItemDetailContainer />} />
+          <Route exact path='/about' element={<About />} />
+          <Route exact path='/contact' element={<Contact />} />
+          <Route exact path='/carrito' element={<Carrito />} />
+        </Routes>
+      </BrowserRouter>
+    </CartProvider>
+  ) 
+} 
 
-      <Navbar />
-
-      <Routes>
-        <Route exact path='/' element={<ItemListContainer />} />
-        <Route exact path='/categoria/:id' element={<ItemListContainer />} />
-        <Route exact path='/producto/:id' element={<ItemDetailContainer />} />
-        <Route exact path='/about' element={<About />} />
-        <Route exact path='/contact' element={<Contact />} />
-      </Routes>
-
-    </BrowserRouter>
-  )
-
-
-}
-
-export default App
+export default App 
 

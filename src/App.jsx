@@ -4,12 +4,13 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import About from './components/About/About'
 import Contact from './components/Contact/Contact'
 import ItemDetailContainer from './components/ItemList/ItemDetailContainer'
-import { CartProvider } from './components/Cart/CartContext'
+import { CartProvider } from './components/Context/CartContext'
 import Carrito from './components/Cart/Carrito'
-
+import CheckOut from './components/CheckOut'
 
 const App = () => {
   return (
+    
     <CartProvider>
       <BrowserRouter>
         <Navbar />
@@ -20,11 +21,12 @@ const App = () => {
           <Route exact path='/about' element={<About />} />
           <Route exact path='/contact' element={<Contact />} />
           <Route exact path='/carrito' element={<Carrito />} />
+          <Route exact path='/checkout' element={<CheckOut />} />
         </Routes>
       </BrowserRouter>
     </CartProvider>
   ) 
-} 
+}
 
 export default App 
 

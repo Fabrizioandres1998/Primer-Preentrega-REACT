@@ -1,3 +1,4 @@
+
 .navbar-expand-lg {
     height: 100px;
 }
@@ -18,7 +19,7 @@
 .navbar-brand {
     color: white;
     left: 200px;
-    position: relative; 
+    position: relative;
 }
 
 @media (max-width: 1504px) {
@@ -56,7 +57,7 @@
     width: 100px;
     font-size: 25px;
     color: white;
-} 
+}
 
 .cartWidget-number {
     position: absolute;
@@ -75,13 +76,67 @@
 }
 
 .dropdown-menu {
-    margin-left: 35%; }
+    margin-left: 35%;
+}
 
 .btn {
     color: white;
-}   
+}
 
 .btn_contador {
     margin-bottom: 5px;
     display: block;
+}
+
+.card {
+    width: 18rem;
+    margin-bottom: 15px;
+    margin: auto;
+}
+
+.card-img-top {
+    height: 200px; 
+    object-fit: cover; 
+    height: 100%;
+}
+
+.card-detail {
+    margin: auto;
+    top: 50px;
+    width: 40%;
+}
+
+.img-detail {
+    flex-shrink: 0;
+    margin-right: 20px;
+}
+
+.info-detail {
+    flex-grow: 1;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+input {
+    margin-top: 5px;
+}
+
+.button-checkout {
+    width: 100%;
+    margin: auto;
+    margin-top: 5px;
+}
+
+.button-carrito {
+    margin: 5px;
+}
+
+h1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }

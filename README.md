@@ -1,4 +1,5 @@
-![](https://github.com/Fabrizioandres1998/SegundaPreentrega-DIsidoro-REACT/blob/main/recording.gif)
+![recording (1)](https://github.com/Fabrizioandres1998/Proyecto-Final---DIsidoro-REACT/assets/95835216/eb231261-0d15-4e58-a115-2b282b7bae16)
+
 
 
 
